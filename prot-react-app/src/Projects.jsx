@@ -6,19 +6,19 @@ const projects = [
     title: "Animated Portfolio",
     description: "A modern, animated portfolio site showcasing my work, built with React, PHP, and MySQL.",
     link: "#",
-    tags: ["React", "AOS", "PHP", "MySQL"],
+    tags: ["React", "Node.js", "PHP", "MySQL"],
   },
   {
     title: "E-commerce Dashboard",
     description: "Interactive admin dashboard for managing products, orders, and analytics.",
     link: "#",
-    tags: ["React", "Node.js", "REST API"],
+    tags: ["JS", "Node.js", "REST API"],
   },
   {
     title: "Blog Platform",
     description: "Full-featured blogging platform with user authentication and markdown support.",
-    link: "#",
-    tags: ["PHP", "MySQL", "Bootstrap"],
+    link: "https://www.beingguru.com/",
+    tags: ["WordPress"],
   },
 ];
 

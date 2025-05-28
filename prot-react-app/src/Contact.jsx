@@ -39,9 +39,9 @@ function Contact() {
         )}
       </form>
       <div className="contact-socials">
-        <a href="mailto:youremail@example.com">Email</a>
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:syeddmeerankhan@gamil.com">Email</a>
+        <a href="https://github.com/SyedMeeranKhan" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/syed-meeran-khan-9b0a56259/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </section>
   );
