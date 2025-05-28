@@ -1,1 +1,0 @@
-// to be code for hero component
