@@ -11,21 +11,24 @@ import "./App.css";
 
 function App() {
   useEffect(() => {
-    AOS.init({ once: true, duration: 900, easing: "ease-in-out" });
+    AOS.init({
+      duration: 900,
+      easing: "ease-in-out",
+      once: false,
+    });
   }, []);
 
   return (
-    <>
+    <div className="app-root">
       <Navbar />
-      <main>
+      <div className="app-content">
         <Hero />
         <About />
         <Projects />
         <Contact />
-      </main>
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
-
 export default App;

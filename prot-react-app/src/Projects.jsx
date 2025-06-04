@@ -6,19 +6,19 @@ const projects = [
     title: "Animated Portfolio",
     description: "A modern, animated portfolio site showcasing my work, built with React, PHP, and MySQL.",
     link: "#",
-    tags: ["React", "Node.js", "PHP", "MySQL"],
+    tags: ["React", "AOS", "PHP", "MySQL"],
   },
   {
     title: "E-commerce Dashboard",
     description: "Interactive admin dashboard for managing products, orders, and analytics.",
-    link: "#",
-    tags: ["JS", "Node.js", "REST API"],
+    link: "https://www.getnow.pk/",
+    tags: ["React", "Node.js", "REST API"],
   },
   {
     title: "Blog Platform",
     description: "Full-featured blogging platform with user authentication and markdown support.",
     link: "https://www.beingguru.com/",
-    tags: ["WordPress"],
+    tags: ["PHP", "MySQL", "Bootstrap"],
   },
 ];
 
@@ -36,7 +36,14 @@ function Projects() {
                 <span key={tag}>{tag}</span>
               ))}
             </div>
-            {/* <a href={proj.link} className="proj-link" target="_blank" rel="noopener noreferrer">View</a> */}
+            <a
+              href={proj.link}
+              className="proj-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View
+            </a>
           </div>
         ))}
       </div>

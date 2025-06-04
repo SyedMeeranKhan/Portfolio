@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const BACKEND_URL = "http://localhost/ANIMATED_PORTFOLIO/beckend/submit-form.php"; // Adjust to match your backend
+const BACKEND_URL = "http://localhost/ANIMATED_PORTFOLIO/beckend/submit-form.php";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
