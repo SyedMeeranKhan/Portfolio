@@ -1,15 +1,14 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-
-// Middleware
 app.use(express.json());
 app.use(cors());
 
-// MongoDB Connection
-const dbURI = 'mongodb+srv://syeddmeerankhan:aUgVEoGFFvLdr8rk@leoapi.ucqx5q1.mongodb.net/LEOAPI?retryWrites=true&w=majority&appName=LEOAPI';
+const dbURI = process.env.DB_URI;
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
