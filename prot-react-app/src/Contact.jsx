@@ -1,25 +1,31 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "./App.css";
 
-const BACKEND_URL = "http://localhost/ANIMATED_PORTFOLIO/beckend/submit-form.php";
+const BACKEND_URL = "http://localhost:5000/submit-form"; // Update this line
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState({ type: "", msg: "" });
 
-  const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ type: "info", msg: "Sending..." });
     try {
-      const res = await axios.post(BACKEND_URL, form);
-      if (res.data.success) {
+      const res = await fetch(BACKEND_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.success) {
         setStatus({ type: "success", msg: "Thank you! Message sent." });
         setForm({ name: "", email: "", message: "" });
       } else {
-        setStatus({ type: "error", msg: res.data.message });
+        setStatus({ type: "error", msg: data.message });
       }
     } catch (err) {
       setStatus({ type: "error", msg: "Could not send message. Try again later." });
@@ -34,9 +40,7 @@ function Contact() {
         <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="Your Email" required />
         <textarea name="message" value={form.message} onChange={handleChange} placeholder="Message" required />
         <button type="submit">Send Message</button>
-        {status.msg && (
-          <div className={`form-status ${status.type}`}>{status.msg}</div>
-        )}
+        {status.msg && <div className={`form-status ${status.type}`}>{status.msg}</div>}
       </form>
       <div className="contact-socials">
         <a href="mailto:syeddmeerankhan@gamil.com">Email</a>
