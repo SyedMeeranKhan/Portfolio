@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
 const dbURI = process.env.DB_URI;
-
 let isConnected = false;
 
 async function connectDB() {
