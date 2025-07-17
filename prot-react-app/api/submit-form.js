@@ -4,7 +4,11 @@ const dbURI = process.env.DB_URI;
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+    return res.status(500).json({ success: false, message: 'DB connection error' });
+  });
+
 
 // Define schema
 const contactSchema = new mongoose.Schema({
